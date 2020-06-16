@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import BlobButtons from "./BlobButtons";
 import { Spring, animated } from "react-spring/renderprops";
 import { interpolate } from "flubber";
-import { easeSin } from "d3-ease";
+import { easeSinInOut } from "d3-ease";
 import "../style/blob.scss";
 
 class Blob extends Component {
@@ -44,7 +44,7 @@ class Blob extends Component {
         return (
             <div className="blob-box">
                 <svg
-                    width="600"
+                    width="640"
                     viewBox="0 0 200 200"
                     xmlns="http://www.w3.org/2000/svg"
                 >
@@ -53,7 +53,7 @@ class Blob extends Component {
                         to={{ t: 1 }}
                         config={{
                             duration: 1400,
-                            easing: easeSin,
+                            easing: easeSinInOut,
                         }}
                         onRest={this.goNext}
                         reset
@@ -69,12 +69,21 @@ class Blob extends Component {
 
                     <text
                         className="dvf"
-                        x="50%"
+                        x="49%"
                         y="42%"
                         dominant-baseline="middle"
                         text-anchor="middle"
                     >
                         dvf
+                    </text>
+                    <text
+                        className="front-end-dev"
+                        x="50%"
+                        y="50%"
+                        dominant-baseline="middle"
+                        text-anchor="middle"
+                    >
+                        {"< front-end developer />"}
                     </text>
                 </svg>
 
